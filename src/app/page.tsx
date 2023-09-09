@@ -1,95 +1,193 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import styles from "./page.module.scss";
+import Introduction from "../../components/Introduction";
+import Card from "../../components/Card";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
+    <main>
+      <section className={styles.introduction}>
+        <Introduction />
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
+          src="/images/illustration.svg"
+          alt="Illustration"
+          width={798}
+          height={532}
           priority
         />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+      <section className={styles.mySkillsSection}>
+        <div
+          className={styles.titleBlock}
+          style={
+            {
+              "--bottom": 0,
+              "--right": 0,
+            } as React.CSSProperties
+          }
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+          <span>
+            <h2>My skills</h2>
+          </span>
+          <div
+            className={styles.orangeBox}
+            style={
+              {
+                "--height": "0.5rem",
+                "--width": "100%",
+              } as React.CSSProperties
+            }
+          ></div>
+        </div>
+      </section>
+      <section className={styles.serviceSection}>
+        <div
+          className={styles.titleBlock}
+          style={
+            {
+              "--bottom": "37%",
+              "--right": "48%",
+            } as React.CSSProperties
+          }
         >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
+          <span>
+            <h2>What service do I provide</h2>
+          </span>
+          <div
+            className={styles.orangeBox}
+            style={
+              {
+                "--height": "0.5rem",
+                "--width": "23%",
+              } as React.CSSProperties
+            }
+          ></div>
+        </div>
+        <div>
+          <Card
+            ImageSrc="/images/frame.svg"
+            Heading="Analytics & SEO"
+            Body="Implement tracking & analytics tools to monitor website performance & improve SEO."
+            Styling={"serviceCard"}
+            ImHeight={24}
+            ImWidth={24}
+          />
+          <Card
+            ImageSrc="/images/frame.svg"
+            Heading="Analytics & SEO"
+            Body="Implement tracking & analytics tools to monitor website performance & improve SEO."
+            Styling={"serviceCard"}
+            ImHeight={24}
+            ImWidth={24}
+          />
+          <Card
+            ImageSrc="/images/frame.svg"
+            Heading="Analytics & SEO"
+            Body="Implement tracking & analytics tools to monitor website performance & improve SEO."
+            Styling={"serviceCard"}
+            ImHeight={24}
+            ImWidth={24}
+          />
+          <Card
+            ImageSrc="/images/frame.svg"
+            Heading="Analytics & SEO"
+            Body="Implement tracking & analytics tools to monitor website performance & improve SEO."
+            Styling={"serviceCard"}
+            ImHeight={24}
+            ImWidth={24}
+          />
+        </div>
+      </section>
+      <section className={styles.experienceSection}>
+        <div className={styles.workExperience}>
+          <div
+            className={styles.titleBlock}
+            style={
+              {
+                "--bottom": "5%",
+                "--right": "48%",
+              } as React.CSSProperties
+            }
+          >
+            <span>
+              <h2>Work Experience</h2>
+            </span>
+            <div
+              className={styles.orangeBox}
+              style={
+                {
+                  "--height": "0.5rem",
+                  "--width": "52%",
+                } as React.CSSProperties
+              }
+            ></div>
+          </div>
           <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+            Progress and milestones: A simple walkthrough of roles, projects,
+            and achievements in my career.
           </p>
-        </a>
-      </div>
+        </div>
+        <div className={styles.experienceCardStack}>
+          <Card
+            ImageSrc={"/images/frame.svg"}
+            Heading={"Slack"}
+            Body={"Product Design - 4 Years Experience"}
+            Styling={"experienceCard"}
+            ImHeight={58}
+            ImWidth={58}
+          />
+          <Card
+            ImageSrc={"/images/frame.svg"}
+            Heading={"Slack"}
+            Body={"Product Design - 4 Years Experience"}
+            Styling={"experienceCard"}
+            ImHeight={58}
+            ImWidth={58}
+          />
+          <Card
+            ImageSrc={"/images/frame.svg"}
+            Heading={"Slack"}
+            Body={"Product Design - 4 Years Experience"}
+            Styling={"experienceCard"}
+            ImHeight={58}
+            ImWidth={58}
+          />
+          <Card
+            ImageSrc={"/images/frame.svg"}
+            Heading={"Slack"}
+            Body={"Product Design - 4 Years Experience"}
+            Styling={"experienceCard"}
+            ImHeight={58}
+            ImWidth={58}
+          />
+        </div>
+      </section>
+      <section className={styles.featuredProjectsSection}>
+        <div
+          className={styles.titleBlock}
+          style={
+            {
+              "--bottom": "20%",
+              "--right": 0,
+            } as React.CSSProperties
+          }
+        >
+          <span>
+            <h2>Featured Projects</h2>
+          </span>
+          <div
+            className={styles.orangeBox}
+            style={
+              {
+                "--height": "0.5rem",
+                "--width": "45%",
+              } as React.CSSProperties
+            }
+          ></div>
+        </div>
+      </section>
+      {/* What they say about me component */}
+      {/* Get in touch with me component */}
     </main>
-  )
+  );
 }
