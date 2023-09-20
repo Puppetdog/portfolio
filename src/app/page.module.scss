@@ -1,0 +1,250 @@
+@use "/utils/typography" as typography;
+@import "/utils/_variables.scss";
+
+.introduction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5%;
+  align-items: flex-end;
+}
+
+.introduction-body {
+  display: flex;
+  flex-direction: column;
+  max-width: 31.9375rem;
+  > h3 {
+    color: $accent-primary-light;
+    display: block;
+  }
+
+  > p {
+    color: $white-500;
+  }
+}
+
+.introduction-footer {
+  max-width: 31.9375rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-contact {
+  color: $white-500;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1.125rem;
+}
+
+.button {
+  @include typography.body-bold;
+  color: $white-900;
+  background-color: $accent-primary-light;
+  display: flex;
+  width: 11.625rem;
+  padding: 1.25rem 0.75rem;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  border-width: 0px;
+}
+
+.mySkillsSection {
+  display: flex;
+  overflow: hidden;
+  padding: 4.5rem 5.3125rem;
+  background: $white-900;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+@keyframes colorFade {
+  from {
+    background: $accent-primary-light;
+  }
+  to {
+    background: $white-800;
+  }
+}
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.625rem;
+  max-width: 16rem;
+  max-height: 16rem;
+  box-shadow: 0px 1px 20px 0px #e0ecff;
+  background: $white-800;
+  gap: 2rem;
+  padding: 2%;
+  transition-property: background, transform;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275), ease-out;
+  transition-duration: 1s;
+
+  &:hover {
+    background: $accent-primary-light;
+    transform: translateY(3rem);
+    & > div {
+      animation: colorFade 0.9s forwards;
+    }
+    & > section {
+      > h3 {
+        color: $white-800;
+      }
+
+      & > p {
+        color: $white-800;
+      }
+    }
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.625rem;
+    width: 3.875rem;
+    height: 3.875rem;
+    box-shadow: 10px 10px 26px 0px rgba(2, 82, 205, 0.28);
+    background: $accent-primary-light;
+  }
+  > section {
+    > h3 {
+      @include typography.base-bold;
+      color: $black-200;
+    }
+
+    > p {
+      @include typography.small-regular;
+      color: $white-500;
+    }
+  }
+}
+
+.serviceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 5%;
+  align-items: center;
+  > div {
+    display: inherit;
+    flex-direction: row;
+    gap: inherit;
+    padding: inherit;
+  }
+}
+
+.experienceSection {
+  width: 90rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  padding-left: 5.3rem;
+  padding-right: 5.3rem;
+  gap: 0.625rem;
+  background: $white-900;
+}
+
+.experienceCard {
+  width: 38rem;
+  display: flex;
+  flex: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 2rem;
+  gap: 2rem;
+  height: 7.625rem;
+  border-radius: 0.625rem;
+  border: 1px solid $white-800;
+  background: $white-900;
+  flex-shrink: 0;
+  transition-property: box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1), ease-out;
+  transition-duration: 1s;
+
+  &:hover {
+    box-shadow: 0px 1px 20px 0px #e0ecff;
+    transform: translateX(2rem);
+  }
+
+  > section {
+    > h3 {
+      @include typography.base-bold;
+      color: $black-200;
+    }
+
+    > p {
+      @include typography.small-regular;
+      color: $white-500;
+    }
+  }
+}
+
+.workExperience {
+  flex-basis: 20%;
+  color: $white-900;
+  padding: 9.5rem 8.9375rem 6.5625rem 6.5625rem;
+  border-radius: 1rem;
+  background: $black-200;
+  align-items: center;
+  flex-shrink: 1;
+  flex-wrap: 1;
+}
+
+.experienceCardStack {
+  max-width: 37rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.featuredProjectsSection {
+  display: flex;
+  overflow: hidden;
+  padding: 4.5rem 5.3125rem;
+  background: $white-900;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.orangeBox {
+  @include typography.orangeBox;
+  width: var(--width);
+  height: var(--height);
+}
+
+.titleBlock {
+  position: relative;
+  > span {
+    position: relative;
+    z-index: 500;
+  }
+  > div {
+    position: absolute;
+    bottom: var(--bottom);
+    right: var(--right);
+  }
+}
+
+.footer {
+  @include typography.body-regular;
+  color: $white-500;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3.25rem 5.3rem 3.25rem 5.3rem;
+  > div {
+    display: inherit;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}
