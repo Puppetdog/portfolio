@@ -1,3 +1,4 @@
+@import "/utils/variables.scss";
 nav {
   max-width: 79.375rem;
   display: flex;
@@ -8,6 +9,24 @@ nav {
   > section {
     > ul {
       > li {
+        > a {
+          text-decoration: none;
+          &:link {
+            color: inherit;
+          }
+
+          &:visited {
+            color: inherit;
+          }
+
+          &:hover {
+            color: $accent-primary-light;
+          }
+
+          &:active {
+            color: $accent-primary-light;
+          }
+        }
         display: inline-flex;
         padding-inline: 2.25rem;
       }

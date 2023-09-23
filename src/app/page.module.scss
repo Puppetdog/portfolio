@@ -273,22 +273,8 @@
   background: $white-900;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.625rem;
-}
-
-.underLine {
-  position: relative;
-  &::after {
-    content: "";
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    border-style: solid;
-    border-color: $accent-secondary;
-    background: $accent-secondary;
-    height: var(--height);
-    width: 100%;
-  }
 }
 
 .footer {
@@ -323,4 +309,15 @@
   > button {
     flex-basis: 60%;
   }
+}
+
+.reviewsSection {
+  display: flex;
+  overflow: hidden;
+  padding: 4.5rem 5.3125rem;
+  background: $white-900;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
 }

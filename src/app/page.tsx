@@ -111,7 +111,7 @@ export default function Home() {
           </h2>
         </span>
       </section>
-      <section>
+      <section className={styles.reviewsSection}>
         <span>
           <h2>
             What{" "}

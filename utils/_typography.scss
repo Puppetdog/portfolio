@@ -55,3 +55,18 @@
   font-weight: 600;
   line-height: 145%;
 }
+
+.underLine {
+  position: relative;
+  &::after {
+    content: "";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-style: solid;
+    border-color: $accent-secondary;
+    background: $accent-secondary;
+    height: var(--height);
+    width: 100%;
+  }
+}
