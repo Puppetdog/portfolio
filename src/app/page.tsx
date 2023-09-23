@@ -3,6 +3,7 @@ import styles from "./page.module.scss";
 import Introduction from "../../components/Introduction";
 import Card from "../../components/Card";
 import Skillset from "../../components/Skillset";
+import ExperienceSection from "../../components/ExperienceCards";
 
 export default function Home() {
   return (
@@ -18,54 +19,28 @@ export default function Home() {
         />
       </section>
       <section className={styles.mySkillsSection}>
-        <div
-          className={styles.titleBlock}
-          style={
-            {
-              "--bottom": 0,
-              "--right": 0,
-            } as React.CSSProperties
-          }
+        <span
+          className={styles.underLine}
+          style={{ "--height": "0.5rem" } as React.CSSProperties}
         >
-          <span>
-            <h2>My skills</h2>
-          </span>
-          <div
-            className={styles.orangeBox}
-            style={
-              {
-                "--height": "0.5rem",
-                "--width": "100%",
-              } as React.CSSProperties
-            }
-          ></div>
-        </div>
+          <h2>My skills</h2>
+        </span>
 
         <Skillset />
       </section>
       <section className={styles.serviceSection}>
-        <div
-          className={styles.titleBlock}
-          style={
-            {
-              "--bottom": "37%",
-              "--right": "48%",
-            } as React.CSSProperties
-          }
-        >
-          <span>
-            <h2>What service do I provide</h2>
-          </span>
-          <div
-            className={styles.orangeBox}
-            style={
-              {
-                "--height": "0.5rem",
-                "--width": "23%",
-              } as React.CSSProperties
-            }
-          ></div>
-        </div>
+        <span>
+          <h2>
+            What{" "}
+            <span
+              className={styles.underLine}
+              style={{ "--height": "0.5rem" } as React.CSSProperties}
+            >
+              service
+            </span>{" "}
+            do I provide
+          </h2>
+        </span>
         <div>
           <Card
             ImageSrc="/images/frame.svg"
@@ -103,94 +78,53 @@ export default function Home() {
       </section>
       <section className={styles.experienceSection}>
         <div className={styles.workExperience}>
-          <div
-            className={styles.titleBlock}
-            style={
-              {
-                "--bottom": "5%",
-                "--right": "48%",
-              } as React.CSSProperties
-            }
-          >
+          <h2>
+            Work{" "}
             <span>
-              <h2>Work Experience</h2>
+              <span
+                className={styles.underLine}
+                style={{ "--height": "0.5rem" } as React.CSSProperties}
+              >
+                {" "}
+                Experi
+              </span>
+              ence
             </span>
-            <div
-              className={styles.orangeBox}
-              style={
-                {
-                  "--height": "0.5rem",
-                  "--width": "52%",
-                } as React.CSSProperties
-              }
-            ></div>
-          </div>
+          </h2>
           <p>
             Progress and milestones: A simple walkthrough of roles, projects,
             and achievements in my career.
           </p>
         </div>
-        <div className={styles.experienceCardStack}>
-          <Card
-            ImageSrc={"/images/frame.svg"}
-            Heading={"Slack"}
-            Body={"Product Design - 4 Years Experience"}
-            Styling={"experienceCard"}
-            ImHeight={58}
-            ImWidth={58}
-          />
-          <Card
-            ImageSrc={"/images/frame.svg"}
-            Heading={"Slack"}
-            Body={"Product Design - 4 Years Experience"}
-            Styling={"experienceCard"}
-            ImHeight={58}
-            ImWidth={58}
-          />
-          <Card
-            ImageSrc={"/images/frame.svg"}
-            Heading={"Slack"}
-            Body={"Product Design - 4 Years Experience"}
-            Styling={"experienceCard"}
-            ImHeight={58}
-            ImWidth={58}
-          />
-          <Card
-            ImageSrc={"/images/frame.svg"}
-            Heading={"Slack"}
-            Body={"Product Design - 4 Years Experience"}
-            Styling={"experienceCard"}
-            ImHeight={58}
-            ImWidth={58}
-          />
-        </div>
+        <ExperienceSection />
       </section>
       <section className={styles.featuredProjectsSection}>
-        <div
-          className={styles.titleBlock}
-          style={
-            {
-              "--bottom": "20%",
-              "--right": 0,
-            } as React.CSSProperties
-          }
-        >
-          <span>
-            <h2>Featured Projects</h2>
-          </span>
-          <div
-            className={styles.orangeBox}
-            style={
-              {
-                "--height": "0.5rem",
-                "--width": "45%",
-              } as React.CSSProperties
-            }
-          ></div>
-        </div>
+        <span>
+          <h2>
+            Featured{" "}
+            <span
+              className={styles.underLine}
+              style={{ "--height": "0.5rem" } as React.CSSProperties}
+            >
+              Projects
+            </span>
+          </h2>
+        </span>
       </section>
-      {/* What they say about me component */}
-      {/* Get in touch with me component */}
+      <section>
+        <span>
+          <h2>
+            What{" "}
+            <span
+              className={styles.underLine}
+              style={{ "--height": "0.5rem" } as React.CSSProperties}
+            >
+              they say
+            </span>{" "}
+            about me
+          </h2>
+        </span>
+      </section>
     </main>
   );
 }

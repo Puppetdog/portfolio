@@ -86,6 +86,10 @@
   align-items: center;
   border-radius: 9999px;
   background-color: $white-900;
+  box-shadow: none;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-duration: 0.8s;
   > img {
     display: inherit;
     filter: grayscale(100%);
@@ -93,6 +97,7 @@
     padding: 1.5rem;
   }
   &:hover {
+    box-shadow: 0px 1px 20px 0px #e0ecff;
     > img {
       animation: colorIn 1s forwards;
     }
@@ -188,6 +193,16 @@
   background: $white-900;
 }
 
+@keyframes filterIn {
+  from {
+    filter: none;
+  }
+  to {
+    filter: invert(10%) sepia(88%) saturate(6759%) hue-rotate(209deg)
+      brightness(102%) contrast(104%);
+  }
+}
+
 .experienceCard {
   width: 38rem;
   display: flex;
@@ -204,10 +219,20 @@
   transition-property: box-shadow, transform;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1), ease-out;
   transition-duration: 1s;
+  > div {
+    > img {
+      filter: none;
+    }
+  }
 
   &:hover {
     box-shadow: 0px 1px 20px 0px #e0ecff;
     transform: translateX(2rem);
+    > div {
+      > img {
+        animation: filterIn 2s forwards;
+      }
+    }
   }
 
   > section {
@@ -251,35 +276,51 @@
   gap: 0.625rem;
 }
 
-.orangeBox {
-  @include typography.orangeBox;
-  width: var(--width);
-  height: var(--height);
-}
-
-.titleBlock {
+.underLine {
   position: relative;
-  > span {
-    position: relative;
-    z-index: 500;
-  }
-  > div {
+  &::after {
+    content: "";
+    bottom: 0;
+    left: 0;
     position: absolute;
-    bottom: var(--bottom);
-    right: var(--right);
+    border-style: solid;
+    border-color: $accent-secondary;
+    background: $accent-secondary;
+    height: var(--height);
+    width: 100%;
   }
 }
 
 .footer {
+  padding-top: 4.5rem;
+  padding-left: 5.3rem;
+  padding-right: 5.3rem;
+}
+
+.socials {
   @include typography.body-regular;
   color: $white-500;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3.25rem 5.3rem 3.25rem 5.3rem;
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
   > div {
     display: inherit;
     flex-direction: row;
     gap: 1.5rem;
+  }
+}
+
+.banner {
+  border-radius: 0.375rem;
+  background-image: url("/images/banner.svg");
+  background-color: $accent-secondary;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 4.5rem;
+  > button {
+    flex-basis: 60%;
   }
 }
