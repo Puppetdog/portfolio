@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import Introduction from "../../components/Introduction";
 import Card from "../../components/Card";
+import Skillset from "../../components/Skillset";
 
 export default function Home() {
   return (
@@ -39,6 +40,8 @@ export default function Home() {
             }
           ></div>
         </div>
+
+        <Skillset />
       </section>
       <section className={styles.serviceSection}>
         <div
