@@ -10,6 +10,8 @@ export interface CardProps {
 }
 
 export type Project = {
+  badges: string[];
+  description: string;
   _id: string;
   _createdAt: Date;
   name: string;

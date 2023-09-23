@@ -4,6 +4,27 @@ const project = {
   type: "document",
   fields: [
     { name: "name", title: "Name", type: "string" },
+
+    { name: "description", title: "Description", type: "string" },
+    {
+      title: "Badges",
+      name: "badges",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+    {
+      title: "Image",
+      name: "image",
+      type: "image",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          title: "alt",
+          type: "string",
+        },
+      ],
+    },
     {
       name: "slug",
       title: "Slug",

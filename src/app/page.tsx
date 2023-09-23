@@ -4,6 +4,7 @@ import Introduction from "../../components/Introduction";
 import Card from "../../components/Card";
 import Skillset from "../../components/Skillset";
 import ExperienceSection from "../../components/ExperienceCards";
+import ProjectFeat from "../../components/ProjectFeat";
 
 export default function Home() {
   return (
@@ -110,6 +111,7 @@ export default function Home() {
             </span>
           </h2>
         </span>
+        <ProjectFeat />
       </section>
       <section className={styles.reviewsSection}>
         <span>
