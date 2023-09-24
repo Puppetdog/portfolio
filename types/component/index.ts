@@ -11,6 +11,8 @@ export interface CardProps {
 
 export type Project = {
   badges: string[];
+  challenges: string[];
+  learnings: string[];
   description: string;
   _id: string;
   _createdAt: Date;
@@ -19,4 +21,14 @@ export type Project = {
   image: string;
   url: string;
   content: PortableTextBlock[];
+  probState: PortableTextBlock[];
+  endDate: Date;
+  startDate: Date;
+  hfDesign: string;
+  role: string;
+};
+
+export type Service = {
+  name: string;
+  description: string;
 };

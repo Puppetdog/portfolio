@@ -42,6 +42,48 @@ const project = {
       type: "array",
       of: [{ type: "block" }],
     },
+    {
+      name: "probStatement",
+      title: "Problem Statement",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
+      title: "HFdesign",
+      name: "hfDesign",
+      type: "image",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          title: "alt",
+          type: "string",
+        },
+      ],
+    },
+    {
+      title: "Start Date",
+      name: "startDate",
+      type: "date",
+    },
+    {
+      title: "End Date",
+      name: "endDate",
+      type: "date",
+    },
+    { name: "role", title: "Role", type: "string" },
+    {
+      title: "Challenges",
+      name: "challenges",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+    {
+      title: "Learnings",
+      name: "learnings",
+      type: "array",
+      of: [{ type: "string" }],
+    },
   ],
 };
 

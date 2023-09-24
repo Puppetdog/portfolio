@@ -64,6 +64,25 @@ h3 {
   display: contents;
 }
 
+body,
+body[data-theme="light"] {
+  --color-text-primary: $black-300;
+  --color-bg-primary: $white-800;
+  --color-bg-toggle: #1e90ff;
+}
+
+body[data-theme="dark"] {
+  --color-text-primary: $white-900;
+  --color-bg-primary: $black-300;
+  --color-bg-toggle: #a9a9a9;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background 0.25s ease-in-out;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

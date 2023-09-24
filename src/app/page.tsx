@@ -1,12 +1,14 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import Introduction from "../../components/Introduction";
-import Card from "../../components/Card";
-import Skillset from "../../components/Skillset";
-import ExperienceSection from "../../components/ExperienceCards";
-import ProjectFeat from "../../components/ProjectFeat";
+import Introduction from "../components/Introduction";
+import Card from "../components/Card";
+import Skillset from "../components/Skillset";
+import ExperienceSection from "../components/ExperienceCards";
+import ProjectFeat from "../components/ProjectFeat";
+import { getServices } from "../../sanity/sanity-utils";
 
-export default function Home() {
+export default async function Home() {
+  const services = await getServices();
   return (
     <main>
       <section className={styles.introduction}>
@@ -43,38 +45,17 @@ export default function Home() {
           </h2>
         </span>
         <div>
-          <Card
-            ImageSrc="/images/frame.svg"
-            Heading="Analytics & SEO"
-            Body="Implement tracking & analytics tools to monitor website performance & improve SEO."
-            Styling={"serviceCard"}
-            ImHeight={24}
-            ImWidth={24}
-          />
-          <Card
-            ImageSrc="/images/frame.svg"
-            Heading="Analytics & SEO"
-            Body="Implement tracking & analytics tools to monitor website performance & improve SEO."
-            Styling={"serviceCard"}
-            ImHeight={24}
-            ImWidth={24}
-          />
-          <Card
-            ImageSrc="/images/frame.svg"
-            Heading="Analytics & SEO"
-            Body="Implement tracking & analytics tools to monitor website performance & improve SEO."
-            Styling={"serviceCard"}
-            ImHeight={24}
-            ImWidth={24}
-          />
-          <Card
-            ImageSrc="/images/frame.svg"
-            Heading="Analytics & SEO"
-            Body="Implement tracking & analytics tools to monitor website performance & improve SEO."
-            Styling={"serviceCard"}
-            ImHeight={24}
-            ImWidth={24}
-          />
+          {services.map((service) => (
+            <Card
+              key={services.indexOf(service)}
+              ImageSrc="/images/frame.svg"
+              Heading={service.name}
+              Body={service.description}
+              Styling={"serviceCard"}
+              ImHeight={24}
+              ImWidth={24}
+            />
+          ))}
         </div>
       </section>
       <section className={styles.experienceSection}>

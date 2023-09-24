@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CardProps } from "../types/component";
+import { CardProps } from "../../types/component";
 import styles from "@/app/page.module.scss";
 
 const Card = ({

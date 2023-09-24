@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { getProjects } from "../sanity/sanity-utils";
+import { getProjects } from "../../sanity/sanity-utils";
 import styles from "@/app/page.module.scss";
 
 const ProjectFeat = async () => {
   const projects = await getProjects();
-  console.log(projects[1].image);
   return (
     <>
       {projects.map((project) => (

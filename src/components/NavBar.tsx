@@ -22,7 +22,14 @@ const NavBar = () => {
           </li>
           <li>Contact</li>
           <li>Resume</li>
-          <li>Toggle</li>
+          <li>
+            <Image
+              width={20}
+              height={20}
+              src={"/images/union.svg"}
+              alt={"theme"}
+            />{" "}
+          </li>
         </ul>
       </section>
     </nav>
