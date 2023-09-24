@@ -53,6 +53,7 @@ export async function getProject(slug: string): Promise<Project> {
     role
 
   }`,
+    // eslint-disable-next-line prettier/prettier
     { slug }
   );
 }

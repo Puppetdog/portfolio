@@ -1,6 +1,6 @@
 @import "/utils/variables.scss";
 nav {
-  max-width: 79.375rem;
+  width: auto;
   display: flex;
   justify-content: space-between;
   padding-left: 5%;
@@ -8,7 +8,13 @@ nav {
   padding-right: 5%;
   > section {
     > ul {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
       > li {
+        > img {
+          border: 1px solid transparent;
+        }
         > a {
           text-decoration: none;
           &:link {
@@ -27,7 +33,6 @@ nav {
             color: $accent-primary-light;
           }
         }
-        display: inline-flex;
         padding-inline: 2.25rem;
       }
       > li:nth-last-child(2) {

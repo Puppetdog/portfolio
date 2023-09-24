@@ -6,9 +6,12 @@ const ExperienceSection = () => {
   const fs = require("fs");
   let files = fs.readdirSync(originPath);
   let experiencePath: string[] = [];
-  files.map((skill: string) =>
-    experiencePath.push((originPath + "/" + skill).replace("public", ""))
-  );
+  files.map((skill: string) => {
+    return experiencePath.push(
+      // eslint-disable-next-line prettier/prettier
+      (originPath + "/" + skill).replace("public", "")
+    );
+  });
   return (
     <section className={styles.experienceCardStack}>
       {experiencePath.map((exp) => (

@@ -63,14 +63,20 @@ export default async function Home() {
           <h2>
             Work{" "}
             <span>
-              <span
-                className={styles.underLine}
-                style={{ "--height": "0.5rem" } as React.CSSProperties}
-              >
-                {" "}
-                Experi
-              </span>
-              ence
+              <div>
+                <span
+                  className={styles.underLine}
+                  style={
+                    {
+                      "--height": "0.5rem",
+                    } as React.CSSProperties
+                  }
+                >
+                  {" "}
+                  Experi
+                </span>
+                ence
+              </div>
             </span>
           </h2>
           <p>
