@@ -1,8 +1,8 @@
 import "./globals.scss";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import NavBar from "../../components/NavBar";
-import Footer from "../../components/Footer";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-mode="light">
       <body className={poppins.className}>
         <NavBar />
         {children}

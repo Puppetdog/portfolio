@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 const NavBar = () => {
   // const router = useRouter();
 
@@ -12,11 +13,23 @@ const NavBar = () => {
       </section>
       <section>
         <ul>
-          <li>Home</li>
-          <li>Case Studies</li>
+          {" "}
+          <li>
+            <Link href={"/"}>Home</Link>
+          </li>
+          <li>
+            <Link href={"/case-studies"}>Case Studies</Link>
+          </li>
           <li>Contact</li>
           <li>Resume</li>
-          <li>Toggle</li>
+          <li>
+            <Image
+              width={20}
+              height={20}
+              src={"/images/union.svg"}
+              alt={"theme"}
+            />{" "}
+          </li>
         </ul>
       </section>
     </nav>

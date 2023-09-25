@@ -1,0 +1,22 @@
+@use "/utils/typography" as typography;
+
+@import "/utils/_variables.scss";
+
+.recentCaseStudies {
+  display: flex;
+  flex-direction: column;
+  padding-top: 6.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.subHeading {
+  @include typography.paragraph-regular;
+  color: $white-500;
+  max-width: 44rem;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

@@ -7,28 +7,18 @@ const Introduction = () => {
     <article>
       <section className={styles["introduction-body"]}>
         <h3>HI, I AM DE ANDRE</h3>
-        <div
-          className={styles.titleBlock}
-          style={
-            {
-              "--bottom": "50%",
-              "--right": "4%",
-            } as React.CSSProperties
-          }
-        >
-          <span>
-            <h1>Professional Web Developer based in Saint Lucia</h1>
-          </span>
-          <div
-            className={styles.orangeBox}
-            style={
-              {
-                "--height": "1.5rem",
-                "--width": "95%",
-              } as React.CSSProperties
-            }
-          ></div>
-        </div>
+        <span>
+          <h1>
+            Professional{" "}
+            <span
+              className={styles.underLine}
+              style={{ "--height": "1.5rem" } as React.CSSProperties}
+            >
+              Web Developer
+            </span>{" "}
+            based in Saint Lucia
+          </h1>
+        </span>
         <p>
           Transforming the Web one line of code at a time: Crafting cutting-edge
           digital experiences with precision, passion, and a profound commitment

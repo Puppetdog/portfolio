@@ -1,9 +1,14 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import Introduction from "../../components/Introduction";
-import Card from "../../components/Card";
+import Introduction from "../components/Introduction";
+import Card from "../components/Card";
+import Skillset from "../components/Skillset";
+import ExperienceSection from "../components/ExperienceCards";
+import ProjectFeat from "../components/ProjectFeat";
+import { getServices } from "../../sanity/sanity-utils";
 
-export default function Home() {
+export default async function Home() {
+  const services = await getServices();
   return (
     <main>
       <section className={styles.introduction}>
@@ -17,177 +22,98 @@ export default function Home() {
         />
       </section>
       <section className={styles.mySkillsSection}>
-        <div
-          className={styles.titleBlock}
-          style={
-            {
-              "--bottom": 0,
-              "--right": 0,
-            } as React.CSSProperties
-          }
+        <span
+          className={styles.underLine}
+          style={{ "--height": "0.5rem" } as React.CSSProperties}
         >
-          <span>
-            <h2>My skills</h2>
-          </span>
-          <div
-            className={styles.orangeBox}
-            style={
-              {
-                "--height": "0.5rem",
-                "--width": "100%",
-              } as React.CSSProperties
-            }
-          ></div>
-        </div>
+          <h2>My skills</h2>
+        </span>
+
+        <Skillset />
       </section>
       <section className={styles.serviceSection}>
-        <div
-          className={styles.titleBlock}
-          style={
-            {
-              "--bottom": "37%",
-              "--right": "48%",
-            } as React.CSSProperties
-          }
-        >
-          <span>
-            <h2>What service do I provide</h2>
-          </span>
-          <div
-            className={styles.orangeBox}
-            style={
-              {
-                "--height": "0.5rem",
-                "--width": "23%",
-              } as React.CSSProperties
-            }
-          ></div>
-        </div>
+        <span>
+          <h2>
+            What{" "}
+            <span
+              className={styles.underLine}
+              style={{ "--height": "0.5rem" } as React.CSSProperties}
+            >
+              service
+            </span>{" "}
+            do I provide
+          </h2>
+        </span>
         <div>
-          <Card
-            ImageSrc="/images/frame.svg"
-            Heading="Analytics & SEO"
-            Body="Implement tracking & analytics tools to monitor website performance & improve SEO."
-            Styling={"serviceCard"}
-            ImHeight={24}
-            ImWidth={24}
-          />
-          <Card
-            ImageSrc="/images/frame.svg"
-            Heading="Analytics & SEO"
-            Body="Implement tracking & analytics tools to monitor website performance & improve SEO."
-            Styling={"serviceCard"}
-            ImHeight={24}
-            ImWidth={24}
-          />
-          <Card
-            ImageSrc="/images/frame.svg"
-            Heading="Analytics & SEO"
-            Body="Implement tracking & analytics tools to monitor website performance & improve SEO."
-            Styling={"serviceCard"}
-            ImHeight={24}
-            ImWidth={24}
-          />
-          <Card
-            ImageSrc="/images/frame.svg"
-            Heading="Analytics & SEO"
-            Body="Implement tracking & analytics tools to monitor website performance & improve SEO."
-            Styling={"serviceCard"}
-            ImHeight={24}
-            ImWidth={24}
-          />
+          {services.map((service) => (
+            <Card
+              key={services.indexOf(service)}
+              ImageSrc="/images/frame.svg"
+              Heading={service.name}
+              Body={service.description}
+              Styling={"serviceCard"}
+              ImHeight={24}
+              ImWidth={24}
+            />
+          ))}
         </div>
       </section>
       <section className={styles.experienceSection}>
         <div className={styles.workExperience}>
-          <div
-            className={styles.titleBlock}
-            style={
-              {
-                "--bottom": "5%",
-                "--right": "48%",
-              } as React.CSSProperties
-            }
-          >
+          <h2>
+            Work{" "}
             <span>
-              <h2>Work Experience</h2>
+              <div>
+                <span
+                  className={styles.underLine}
+                  style={
+                    {
+                      "--height": "0.5rem",
+                    } as React.CSSProperties
+                  }
+                >
+                  {" "}
+                  Experi
+                </span>
+                ence
+              </div>
             </span>
-            <div
-              className={styles.orangeBox}
-              style={
-                {
-                  "--height": "0.5rem",
-                  "--width": "52%",
-                } as React.CSSProperties
-              }
-            ></div>
-          </div>
+          </h2>
           <p>
             Progress and milestones: A simple walkthrough of roles, projects,
             and achievements in my career.
           </p>
         </div>
-        <div className={styles.experienceCardStack}>
-          <Card
-            ImageSrc={"/images/frame.svg"}
-            Heading={"Slack"}
-            Body={"Product Design - 4 Years Experience"}
-            Styling={"experienceCard"}
-            ImHeight={58}
-            ImWidth={58}
-          />
-          <Card
-            ImageSrc={"/images/frame.svg"}
-            Heading={"Slack"}
-            Body={"Product Design - 4 Years Experience"}
-            Styling={"experienceCard"}
-            ImHeight={58}
-            ImWidth={58}
-          />
-          <Card
-            ImageSrc={"/images/frame.svg"}
-            Heading={"Slack"}
-            Body={"Product Design - 4 Years Experience"}
-            Styling={"experienceCard"}
-            ImHeight={58}
-            ImWidth={58}
-          />
-          <Card
-            ImageSrc={"/images/frame.svg"}
-            Heading={"Slack"}
-            Body={"Product Design - 4 Years Experience"}
-            Styling={"experienceCard"}
-            ImHeight={58}
-            ImWidth={58}
-          />
-        </div>
+        <ExperienceSection />
       </section>
       <section className={styles.featuredProjectsSection}>
-        <div
-          className={styles.titleBlock}
-          style={
-            {
-              "--bottom": "20%",
-              "--right": 0,
-            } as React.CSSProperties
-          }
-        >
-          <span>
-            <h2>Featured Projects</h2>
-          </span>
-          <div
-            className={styles.orangeBox}
-            style={
-              {
-                "--height": "0.5rem",
-                "--width": "45%",
-              } as React.CSSProperties
-            }
-          ></div>
-        </div>
+        <span>
+          <h2>
+            Featured{" "}
+            <span
+              className={styles.underLine}
+              style={{ "--height": "0.5rem" } as React.CSSProperties}
+            >
+              Projects
+            </span>
+          </h2>
+        </span>
+        <ProjectFeat />
       </section>
-      {/* What they say about me component */}
-      {/* Get in touch with me component */}
+      <section className={styles.reviewsSection}>
+        <span>
+          <h2>
+            What{" "}
+            <span
+              className={styles.underLine}
+              style={{ "--height": "0.5rem" } as React.CSSProperties}
+            >
+              they say
+            </span>{" "}
+            about me
+          </h2>
+        </span>
+      </section>
     </main>
   );
 }

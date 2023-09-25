@@ -56,9 +56,20 @@
   line-height: 145%;
 }
 
-@mixin orangeBox {
-  border-style: solid;
-  border-color: $accent-secondary;
-  background: $accent-secondary;
+.underLine {
+  position: relative;
   z-index: 1;
+  &::after {
+    content: "";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-style: solid;
+    border-color: $accent-secondary;
+    background: $accent-secondary;
+    height: 20%;
+    transform: translateY(-25%);
+    width: 100%;
+    z-index: -1;
+  }
 }
